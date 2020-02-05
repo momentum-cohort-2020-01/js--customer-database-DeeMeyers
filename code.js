@@ -61,13 +61,8 @@ console.log(customerEmails)
 
 //get all adress and make them ok
 
-const states = customers.map(function(customer){
-    return nameToAbbr(customer.location.state)
-})
-console.log(states);
-
 const adressObj = customers.map(function (customer){
-    return customer.location.street + ' ' + customer.location.city
+    return customer.location.street + ' ' + customer.location.city + ' , ' + (nameToAbbr(customer.location.state)) + ' ' +customer.location.postcode
 })
 
 console.log(adressObj);
@@ -86,9 +81,9 @@ const custSince = customers.map(function(customer){
 })
 
 //make a div with a shared class for each item in an array
-console.log(custSince)
- function makeDiv(arr, class){
-     for(let each of arr){
+// console.log(custSince)
+//  function makeDiv(arr, class){
+//      for(let each of arr){
 
-     }
- }
+//      }
+//  }
