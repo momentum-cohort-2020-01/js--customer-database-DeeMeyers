@@ -17,73 +17,130 @@
 
 
 
-function capitalizeFirstLetter(string){
-    return string[0].toUpperCase() + string.slice(1)
-}
 
-const customerNames = customers.map(function (customer){
-    return capitalizeFirstLetter(customer.name.first) +
-    ' ' +
-    capitalizeFirstLetter(customer.name.last)
-})
+// const customerNames = customers.map(function (customer){
+//     return capitalizeFirstLetter(customer.name.first) +
+//     ' ' +
+//     capitalizeFirstLetter(customer.name.last)
+// })
 
-console.log(customerNames);
+
+
+// const customerListItems = customerNames.map(function (name){
+//     const div = document.createElement('div')
+//     div.textContent = name
+//     div.className = 'custy'
+//     return div
+// })
+// console.log({customerListItems});
+
+// const ul = document.createElement('ul')
+// console.log({ul});
+
+// for (const li of customerListItems){
+//     ul.appendChild(li)
+// }
+// document.querySelector('#customers').appendChild(ul)
+
+// //gets me all the picture urls
+// const customerPics = customers.map(function (customer){
+//     return customer.picture.thumbnail
+// })
+
+
+
+// //gets me all the emails
+// const customerEmails = customers.map(function (customer){
+//     return customer.email
+// })
+
+
+
+// //get all adress and make them ok
+
+// const adressObj = customers.map(function (customer){
+//     return customer.location.street + ' ' + customer.location.city + ' , ' + (nameToAbbr(customer.location.state)) + ' ' +customer.location.postcode
+// })
+
+// function adress(customer){
+//     return customer.location.street + ' ' + customer.location.city + ' , ' + (nameToAbbr(customer.location.state)) + ' ' +customer.location.postcode
+// }
+
+
+// //get DOB
+
+// const dob = customers.map(function(customer){
+//     return "DOB: "+moment(customer.dob).format('MMMM Do, YYYY')
+// })
+
+
+
+// //crust since
+
+// const custSince = customers.map(function(customer){
+//     return "Customer Since: "+moment(customer.registered).format('MMMM Do, YYYY')
+// })
+
+
+
+
+// //insert pics
+
+// for(let item of customerListItems){
+//     let el = document.createElement('img')
+//     el.src = 
+    
+// }
+
+//everything is a function now
+//taking what i used to get pull all the info by category
+//im going to try to get everything per customer
 
 const customerListItems = customerNames.map(function (name){
     const div = document.createElement('div')
     div.textContent = name
+    div.className = 'custy'
     return div
 })
-console.log(customerListItems);
-console.log(customerListItems[2]);
+console.log({customerListItems});
+
 const ul = document.createElement('ul')
-console.log(ul);
+console.log({ul});
 
 for (const li of customerListItems){
     ul.appendChild(li)
 }
 document.querySelector('#customers').appendChild(ul)
-//gets me all the picture urls
-const customerPics = customers.map(function (customer){
-    return customer.picture.thumbnail
-})
 
-//insert pics
 
-console.log( customerPics)
 
-//gets me all the emails
-const customerEmails = customers.map(function (customer){
+function capitalizeFirstLetter(string){
+    return string[0].toUpperCase() + string.slice(1)
+}
+
+function customerNames(){
+    return capitalizeFirstLetter(customer.name.first) +
+    ' ' +
+    capitalizeFirstLetter(customer.name.last)
+}
+
+function customerPics(){
+     return customer.picture.thumbnail
+}
+
+function emailAdresss(){
     return customer.email
-})
+}
 
-console.log(customerEmails)
-
-//get all adress and make them ok
-
-const adressObj = customers.map(function (customer){
+function adress(){
     return customer.location.street + ' ' + customer.location.city + ' , ' + (nameToAbbr(customer.location.state)) + ' ' +customer.location.postcode
-})
+}
 
-console.log(adressObj);
-
-//get DOB
-
-const dob = customers.map(function(customer){
+function DOB(){
     return "DOB: "+moment(customer.dob).format('MMMM Do, YYYY')
-})
-console.log({dob})
+}
 
-//crust since
-
-const custSince = customers.map(function(customer){
+function crustSince(){
     return "Customer Since: "+moment(customer.registered).format('MMMM Do, YYYY')
-})
+}
 
-//make a div with a shared class for each item in an array
-// console.log(custSince)
-//  function makeDiv(arr, class){
-//      for(let each of arr){
-
-//      }
-//  }
