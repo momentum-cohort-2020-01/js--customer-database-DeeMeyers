@@ -95,52 +95,73 @@
 //everything is a function now
 //taking what i used to get pull all the info by category
 //im going to try to get everything per customer
+//----------------------------------------------------------------------------------------------
+// const customerListItems = customerNames.map(function (name){
+//     const div = document.createElement('div')
+//     div.textContent = name
+//     div.className = 'custy'
+//     return div
+// })
+// console.log({customerListItems});
 
-const customerListItems = customerNames.map(function (name){
-    const div = document.createElement('div')
-    div.textContent = name
-    div.className = 'custy'
-    return div
-})
-console.log({customerListItems});
+// const ul = document.createElement('ul')
+// console.log({ul});
 
-const ul = document.createElement('ul')
-console.log({ul});
+// for (const li of customerListItems){
+//     ul.appendChild(li)
+// }
+// document.querySelector('#customers').appendChild(ul)
 
-for (const li of customerListItems){
-    ul.appendChild(li)
+// const customerObject = customers.map(function (customer){
+//     return customerInfoColected(customer)
+// })
+for (let customer of customers){
+    DOB(customer)
+}    
+console.log(itAll)
+function customerInfoColected(){
+        customerNames()
+        customerPics()
+        emailAdresss()
+        adress()
+        DOB()
+        crustSince()
 }
-document.querySelector('#customers').appendChild(ul)
 
+// console.log(customerInfoColected(customers));
 
+// console.log({customerObject})
 
 function capitalizeFirstLetter(string){
     return string[0].toUpperCase() + string.slice(1)
 }
 
-function customerNames(){
+function customerNames(customer){
     return capitalizeFirstLetter(customer.name.first) +
     ' ' +
     capitalizeFirstLetter(customer.name.last)
 }
 
-function customerPics(){
+function customerPics(customer){
      return customer.picture.thumbnail
 }
+console.log(customers);
 
-function emailAdresss(){
+console.log(customerPics(customer))
+
+function emailAdresss(customer){
     return customer.email
 }
 
-function adress(){
+function adress(customer){
     return customer.location.street + ' ' + customer.location.city + ' , ' + (nameToAbbr(customer.location.state)) + ' ' +customer.location.postcode
 }
 
-function DOB(){
+function DOB(customer){
     return "DOB: "+moment(customer.dob).format('MMMM Do, YYYY')
 }
 
-function crustSince(){
+function crustSince(customer){
     return "Customer Since: "+moment(customer.registered).format('MMMM Do, YYYY')
 }
 
